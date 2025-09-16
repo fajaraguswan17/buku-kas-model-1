@@ -396,6 +396,7 @@ function App() {
             cashBook={currentCashBook!} 
             transactions={currentTransactions}
             onTransactionClick={handleTransactionClick}
+            isDarkMode={isDarkMode}
           />
         );
     }
