@@ -47,6 +47,7 @@ function App() {
 
   // Sample transactions data
   const [transactions] = useState<Transaction[]>([
+    // Transaksi Uang Sekolah
     {
       id: '1',
       cashBookId: 'uang-sekolah',
@@ -84,6 +85,68 @@ function App() {
       hasFile: true
     },
     {
+      id: '7',
+      cashBookId: 'uang-sekolah',
+      type: 'expense',
+      date: '2024-03-12T09:00:00',
+      category: 'Pendidikan',
+      description: 'Beli buku pelajaran semester baru',
+      amount: 350000,
+      balance: 2100000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: true
+    },
+    {
+      id: '8',
+      cashBookId: 'uang-sekolah',
+      type: 'expense',
+      date: '2024-03-11T13:30:00',
+      category: 'Makanan',
+      description: 'Jajan di koperasi sekolah',
+      amount: 12000,
+      balance: 2088000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: false
+    },
+    {
+      id: '9',
+      cashBookId: 'uang-sekolah',
+      type: 'expense',
+      date: '2024-03-10T07:45:00',
+      category: 'Transport',
+      description: 'Ongkos ojek online ke sekolah',
+      amount: 18000,
+      balance: 2070000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: false
+    },
+    {
+      id: '10',
+      cashBookId: 'uang-sekolah',
+      type: 'income',
+      date: '2024-03-09T16:00:00',
+      category: 'Bonus',
+      description: 'Bonus prestasi akademik',
+      amount: 500000,
+      balance: 2570000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: true
+    },
+    {
+      id: '11',
+      cashBookId: 'uang-sekolah',
+      type: 'expense',
+      date: '2024-03-08T12:15:00',
+      category: 'Pendidikan',
+      description: 'Fotokopi materi kuliah',
+      amount: 25000,
+      balance: 2545000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: false
+    },
+
+    // Transaksi Tabungan Pribadi
+    {
       id: '4',
       cashBookId: 'tabungan-pribadi',
       type: 'income',
@@ -95,6 +158,178 @@ function App() {
       createdBy: 'Fajar Aguswan',
       hasFile: true
     },
+    {
+      id: '12',
+      cashBookId: 'tabungan-pribadi',
+      type: 'income',
+      date: '2024-03-11T14:20:00',
+      category: 'Freelance',
+      description: 'Desain logo untuk startup',
+      amount: 1200000,
+      balance: 4550000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: true
+    },
+    {
+      id: '13',
+      cashBookId: 'tabungan-pribadi',
+      type: 'expense',
+      date: '2024-03-10T19:30:00',
+      category: 'Hiburan',
+      description: 'Nonton bioskop dengan teman',
+      amount: 85000,
+      balance: 4465000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: false
+    },
+    {
+      id: '14',
+      cashBookId: 'tabungan-pribadi',
+      type: 'expense',
+      date: '2024-03-09T11:00:00',
+      category: 'Belanja',
+      description: 'Beli laptop untuk kerja freelance',
+      amount: 8500000,
+      balance: -4035000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: true
+    },
+    {
+      id: '15',
+      cashBookId: 'tabungan-pribadi',
+      type: 'income',
+      date: '2024-03-08T10:15:00',
+      category: 'Gaji',
+      description: 'Gaji part-time bulan Maret',
+      amount: 3000000,
+      balance: -1035000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: false
+    },
+    {
+      id: '16',
+      cashBookId: 'tabungan-pribadi',
+      type: 'income',
+      date: '2024-03-07T15:45:00',
+      category: 'Freelance',
+      description: 'Maintenance website bulanan',
+      amount: 800000,
+      balance: -235000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: false
+    },
+    {
+      id: '17',
+      cashBookId: 'tabungan-pribadi',
+      type: 'expense',
+      date: '2024-03-06T18:20:00',
+      category: 'Makanan',
+      description: 'Makan malam di restoran',
+      amount: 150000,
+      balance: -385000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: false
+    },
+    {
+      id: '18',
+      cashBookId: 'tabungan-pribadi',
+      type: 'income',
+      date: '2024-03-05T09:30:00',
+      category: 'Freelance',
+      description: 'Konsultasi IT untuk perusahaan',
+      amount: 1500000,
+      balance: 1115000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: true
+    },
+
+    // Transaksi Dana Darurat
+    {
+      id: '6',
+      cashBookId: 'dana-darurat',
+      type: 'income',
+      date: '2024-03-10T09:30:00',
+      category: 'Investasi',
+      description: 'Dividen saham bulanan',
+      amount: 1000000,
+      balance: 10000000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: false
+    },
+    {
+      id: '19',
+      cashBookId: 'dana-darurat',
+      type: 'income',
+      date: '2024-03-09T11:00:00',
+      category: 'Investasi',
+      description: 'Hasil investasi reksadana',
+      amount: 750000,
+      balance: 9250000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: true
+    },
+    {
+      id: '20',
+      cashBookId: 'dana-darurat',
+      type: 'income',
+      date: '2024-03-08T14:30:00',
+      category: 'Gaji',
+      description: 'Transfer rutin ke dana darurat',
+      amount: 2000000,
+      balance: 8500000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: false
+    },
+    {
+      id: '21',
+      cashBookId: 'dana-darurat',
+      type: 'expense',
+      date: '2024-03-07T16:45:00',
+      category: 'Kesehatan',
+      description: 'Biaya medical check-up tahunan',
+      amount: 850000,
+      balance: 7650000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: true
+    },
+    {
+      id: '22',
+      cashBookId: 'dana-darurat',
+      type: 'income',
+      date: '2024-03-06T10:20:00',
+      category: 'Bonus',
+      description: 'Bonus akhir tahun yang ditabung',
+      amount: 5000000,
+      balance: 8500000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: false
+    },
+    {
+      id: '23',
+      cashBookId: 'dana-darurat',
+      type: 'expense',
+      date: '2024-03-05T08:15:00',
+      category: 'Tagihan',
+      description: 'Bayar premi asuransi kesehatan',
+      amount: 450000,
+      balance: 3050000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: true
+    },
+    {
+      id: '24',
+      cashBookId: 'dana-darurat',
+      type: 'income',
+      date: '2024-03-04T13:00:00',
+      category: 'Investasi',
+      description: 'Pencairan deposito yang jatuh tempo',
+      amount: 3000000,
+      balance: 3500000,
+      createdBy: 'Fajar Aguswan',
+      hasFile: true
+    },
+
+    // Transaksi Transfer antar buku kas
     {
       id: '5',
       cashBookId: 'uang-sekolah',
@@ -108,14 +343,14 @@ function App() {
       hasFile: false
     },
     {
-      id: '6',
-      cashBookId: 'dana-darurat',
-      type: 'income',
-      date: '2024-03-10T09:30:00',
-      category: 'Investasi',
-      description: 'Dividen saham bulanan',
+      id: '25',
+      cashBookId: 'tabungan-pribadi',
+      type: 'transfer',
+      date: '2024-03-04T15:30:00',
+      category: 'Transfer',
+      description: 'Transfer ke dana darurat',
       amount: 1000000,
-      balance: 10000000,
+      balance: 115000,
       createdBy: 'Fajar Aguswan',
       hasFile: false
     }
