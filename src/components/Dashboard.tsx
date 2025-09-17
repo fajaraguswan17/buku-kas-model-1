@@ -397,7 +397,14 @@ export default function Dashboard({ cashBook, transactions, onTransactionClick, 
                     <td className={`px-6 py-4 text-sm transition-colors duration-300 ${
                       isDarkMode ? 'text-gray-300' : 'text-gray-900'
                     }`}>
-                      <div className="max-w-xs truncate">{transaction.description}</div>
+                      <div className="max-w-xs">
+                        <div className="truncate">{transaction.description}</div>
+                        <div className={`text-xs mt-1 transition-colors duration-300 ${
+                          isDarkMode ? 'text-gray-500' : 'text-gray-500'
+                        }`}>
+                          Dicatat oleh: {transaction.createdBy}
+                        </div>
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                       <span className={
