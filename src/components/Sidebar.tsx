@@ -214,6 +214,18 @@ export default function Sidebar({
                   >
                     <span>⚙️ Pengaturan Umum</span>
                   </button>
+                  <button
+                    onClick={() => handleNavClick('category-management')}
+                    className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors duration-200 ${
+                      activeSection === 'category-management'
+                        ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-600 dark:bg-blue-900/20 dark:text-blue-400'
+                        : isDarkMode
+                          ? 'text-gray-400 hover:text-gray-200 hover:bg-gray-700'
+                          : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                    }`}
+                  >
+                    <span>🏷️ Kelola Kategori</span>
+                  </button>
                 </div>
               )}
             </div>
@@ -285,6 +297,57 @@ export default function Sidebar({
                           </div>
                         </button>
                       ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Pengaturan Section - Mobile */}
+                <div>
+                  <button
+                    onClick={() => toggleSection('pengaturan')}
+                    className={`w-full flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
+                      isDarkMode 
+                        ? 'text-gray-300 hover:text-white hover:bg-gray-700' 
+                        : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
+                    }`}
+                  >
+                    <div className="flex items-center">
+                      <Settings className="mr-3 h-5 w-5" />
+                      <span>PENGATURAN</span>
+                    </div>
+                    {expandedSections['pengaturan'] ? (
+                      <ChevronDown className="h-4 w-4" />
+                    ) : (
+                      <ChevronRight className="h-4 w-4" />
+                    )}
+                  </button>
+                  
+                  {expandedSections['pengaturan'] && (
+                    <div className="ml-6 mt-2 space-y-1">
+                      <button
+                        onClick={() => handleNavClick('settings')}
+                        className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors duration-200 ${
+                          activeSection === 'settings'
+                            ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-600 dark:bg-blue-900/20 dark:text-blue-400'
+                            : isDarkMode
+                              ? 'text-gray-400 hover:text-gray-200 hover:bg-gray-700'
+                              : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                        }`}
+                      >
+                        <span>⚙️ Pengaturan Umum</span>
+                      </button>
+                      <button
+                        onClick={() => handleNavClick('category-management')}
+                        className={`w-full flex items-center px-3 py-2 text-sm rounded-lg transition-colors duration-200 ${
+                          activeSection === 'category-management'
+                            ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-600 dark:bg-blue-900/20 dark:text-blue-400'
+                            : isDarkMode
+                              ? 'text-gray-400 hover:text-gray-200 hover:bg-gray-700'
+                              : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
+                        }`}
+                        >
+                          <span>🏷️ Kelola Kategori</span>
+                        </button>
                     </div>
                   )}
                 </div>

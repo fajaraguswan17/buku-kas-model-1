@@ -7,6 +7,7 @@ import Settings from './components/Settings';
 import CashBookSetup from './components/CashBookSetup';
 import TransactionModal from './components/TransactionModal';
 import FloatingActionButton from './components/FloatingActionButton';
+import CategoryManagement from './components/CategoryManagement';
 import { CashBook, Transaction } from './types';
 
 function App() {
@@ -390,6 +391,8 @@ function App() {
         return <Settings />;
       case 'cashbook-setup':
         return <CashBookSetup cashBooks={cashBooks} />;
+      case 'category-management':
+        return <CategoryManagement />;
       default:
         return (
           <Dashboard 
