@@ -107,12 +107,6 @@ export default function Dashboard({ cashBook, transactions, onTransactionClick, 
           <div>
             <div className="flex items-center space-x-2 mb-1">
               <h2 className="text-lg font-medium opacity-90">Saldo {cashBook.name}</h2>
-              <span className="text-sm opacity-75 bg-white/10 px-2 py-1 rounded-full">
-                {new Date(selectedMonth + '-01').toLocaleDateString('id-ID', { 
-                  month: 'long', 
-                  year: 'numeric' 
-                })}
-              </span>
             </div>
             <div className="flex items-baseline space-x-2">
               <span className="text-4xl font-bold">{formatCurrency(cashBook.balance)}</span>
@@ -123,7 +117,18 @@ export default function Dashboard({ cashBook, transactions, onTransactionClick, 
               </span>
             </div>
           </div>
-          <div className="text-4xl opacity-80">{cashBook.icon}</div>
+          <div className="text-right">
+            <div className="text-4xl mb-2">{cashBook.icon}</div>
+            <div className="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-lg">
+              <div className="text-sm font-medium text-white/90">Periode</div>
+              <div className="text-lg font-bold text-white">
+                {new Date(selectedMonth + '-01').toLocaleDateString('id-ID', { 
+                  month: 'long', 
+                  year: 'numeric' 
+                })}
+              </div>
+            </div>
+          </div>
         </div>
         
         {/* Action Buttons */}
