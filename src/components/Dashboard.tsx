@@ -77,24 +77,34 @@ export default function Dashboard({ cashBook, transactions, onTransactionClick, 
   };
 
   const handleExport = (type: 'excel' | 'pdf') => {
-    alert(`Export ${type.toUpperCase()} akan segera diunduh!`);
+    const transactionCount = filteredTransactions.length;
+    const period = selectedMonth;
+    const monthName = new Date(period + '-01').toLocaleDateString('id-ID', { month: 'long', year: 'numeric' });
+    
+    if (type === 'excel') {
+      alert(`📊 Export Excel\n\nMengunduh laporan transaksi:\n• Periode: ${monthName}\n• Jumlah data: ${transactionCount} transaksi\n• Buku kas: ${cashBook.name}\n\n✅ File Excel akan segera diunduh!`);
+    } else {
+      alert(`📄 Export PDF\n\nMengunduh laporan transaksi:\n• Periode: ${monthName}\n• Jumlah data: ${transactionCount} transaksi\n• Buku kas: ${cashBook.name}\n\n✅ File PDF akan segera diunduh!`);
+    }
   };
 
   const handleTransactionAction = (action: string, transaction: Transaction) => {
     switch (action) {
       case 'view':
-        alert(`Melihat detail transaksi: ${transaction.description}`);
+        alert(`📋 Detail Transaksi:\n\nTipe: ${transaction.type === 'income' ? 'Pemasukan' : transaction.type === 'expense' ? 'Pengeluaran' : 'Transfer'}\nTanggal: ${formatDate(transaction.date)}\nKategori: ${transaction.category}\nDeskripsi: ${transaction.description}\nNominal: ${formatCurrency(transaction.amount)}\nSaldo: ${formatCurrency(transaction.balance)}\nDicatat oleh: ${transaction.createdBy}`);
         break;
       case 'edit':
-        alert(`Edit transaksi: ${transaction.description}`);
+        if (confirm(`✏️ Edit transaksi "${transaction.description}"?\n\nFitur edit akan membuka form untuk mengubah data transaksi ini.`)) {
+          alert('🚧 Form edit transaksi akan segera tersedia!\n\nFitur ini akan memungkinkan Anda mengubah semua detail transaksi.');
+        }
         break;
       case 'delete':
-        if (confirm(`Hapus transaksi "${transaction.description}"?`)) {
-          alert('Transaksi berhasil dihapus!');
+        if (confirm(`🗑️ Hapus transaksi "${transaction.description}"?\n\nPeringatan: Tindakan ini tidak dapat dibatalkan dan akan mempengaruhi saldo buku kas.`)) {
+          alert('✅ Transaksi berhasil dihapus!\n\nSaldo buku kas telah diperbarui.');
         }
         break;
       case 'file':
-        alert(`Membuka file lampiran untuk: ${transaction.description}`);
+        alert(`📎 File Lampiran\n\nTransaksi: ${transaction.description}\n\n🚧 Fitur preview file akan segera tersedia!\nAnda akan dapat melihat dan mengunduh file yang dilampirkan pada transaksi ini.`);
         break;
     }
   };
