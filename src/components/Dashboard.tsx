@@ -120,12 +120,9 @@ export default function Dashboard({ cashBook, transactions, onTransactionClick, 
           <div className="text-right">
             <div className="text-4xl mb-2">{cashBook.icon}</div>
             <div className="bg-white/20 backdrop-blur-sm px-3 py-2 rounded-lg">
-              <div className="text-sm font-medium text-white/90">Periode</div>
+              <div className="text-sm font-medium text-white/90">Transaksi</div>
               <div className="text-lg font-bold text-white">
-                {new Date(selectedMonth + '-01').toLocaleDateString('id-ID', { 
-                  month: 'long', 
-                  year: 'numeric' 
-                })}
+                {currentMonthTransactions.length} data
               </div>
             </div>
           </div>
